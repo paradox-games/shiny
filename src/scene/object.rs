@@ -36,8 +36,8 @@ impl Object2d {
     }
 
     pub fn go_to(&mut self,
-                 x: i32,
-                 y: i32)
+                 x: f64,
+                 y: f64)
     {
         self.x = x;
         self.y = y;
