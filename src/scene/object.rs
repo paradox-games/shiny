@@ -25,6 +25,16 @@ impl Object2d {
         };
     }
 
+    pub fn render(&self,
+                  ctx: CanvasRenderingContext2d)
+    {
+        ctx.draw_image_with_svg_image_element(
+            self.sprite,
+            self.x,
+            self.y,
+        );
+    }
+
     pub fn go_to(&mut self,
                  x: i32,
                  y: i32)
