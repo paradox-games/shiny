@@ -42,4 +42,10 @@ impl Object2d {
         self.x = x;
         self.y = y;
     }
+
+    pub fn set_sprite(&mut self,
+                      sprite_id: &str)
+    {
+        self.sprite = window().unwrap().document().unwrap().get_element_by_id(sprite_id).unwrap();
+    }
 }
