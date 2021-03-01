@@ -35,7 +35,7 @@ impl Scene2d {
 
     pub fn render(&self) {
         for o in self.objects {
-            o.render();
+            o.render(self.canvas);
         }
     }
 }
