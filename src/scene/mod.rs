@@ -1,3 +1,5 @@
+use std::vec::Vec;
+
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
 
@@ -10,7 +12,7 @@ use object::Object2d;
 
 pub struct Scene2d {
     canvas: CanvasRenderingContext2d,
-    objects: &[Object2d],
+    objects: Vec<Object2d>,
 }
 
 impl Scene2d {
@@ -29,12 +31,12 @@ impl Scene2d {
                     .unwrap()
                     .dyn_into::<web_sys::CanvasRenderingContext2d>()
                     .unwrap(),
-            objects: [Object2d::NullObj()],
+            objects: vec![Object2d::NullObj()],
         };
     }
 
     pub fn render(&self) {
-        for o in self.objects {
+        for o in self.objects.iter() {
             o.render(self.canvas);
         }
     }
