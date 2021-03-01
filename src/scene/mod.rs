@@ -30,7 +30,7 @@ impl Scene2d {
                     .dyn_into::<web_sys::CanvasRenderingContext2d>()
                     .unwrap(),
             objects: [Object2d::NullObj()],
-        }
+        };
     }
 
     pub fn render(&self) {
