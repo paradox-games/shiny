@@ -7,15 +7,15 @@ use web_sys::*;
 pub struct Object2d {
     sprite: SvgImageElement,   //images in SVG
     id: String,
-    x: i32,
-    y: i32,
+    x: f64,
+    y: f64,
 }
 
 impl Object2d {
     pub fn init(sprite_id: &str,
                 id: String,
-                x: i32,
-                y: i32)
+                x: f64,
+                y: f64)
     {
         return Object2d{
             sprite: window().unwrap().document().unwrap().get_element_by_id(sprite_id).unwrap(),
