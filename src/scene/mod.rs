@@ -40,4 +40,10 @@ impl Scene2d {
             o.render(self.canvas);
         }
     }
+
+    pub fn add_object(&mut self,
+                      obj: Object2d)
+    {
+        self.objects.push(obj);
+    }
 }
