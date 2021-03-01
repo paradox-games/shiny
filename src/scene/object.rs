@@ -24,4 +24,11 @@ impl Object2d {
             y: y,
         };
     }
+
+    pub fn go_to(x: i32,
+                 y: i32)
+    {
+        self.x = x;
+        self.y = y;
+    }
 }
