@@ -25,6 +25,15 @@ impl Object2d {
         };
     }
 
+    pub fn NullObj() -> Object2d {
+        return {
+            sprite: None,
+            id: String::new(),
+            x: 0.0,
+            y: 0.0,
+        }
+    };
+
     pub fn render(&self,
                   ctx: CanvasRenderingContext2d)
     {
