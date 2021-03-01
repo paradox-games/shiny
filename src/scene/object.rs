@@ -16,7 +16,7 @@ impl Object2d {
                 id: String,
                 x: f64,
                 y: f64)
-    {
+        -> Object2d {
         return Object2d{
             sprite: window().unwrap().document().unwrap().get_element_by_id(sprite_id).unwrap(),
             id: id,
@@ -47,5 +47,9 @@ impl Object2d {
                       sprite_id: &str)
     {
         self.sprite = window().unwrap().document().unwrap().get_element_by_id(sprite_id).unwrap();
+    }
+
+    pub fn get_id(&self) -> String {
+        return self.id;
     }
 }

@@ -46,4 +46,16 @@ impl Scene2d {
     {
         self.objects.push(obj);
     }
+
+    pub fn get_object_by_id(&self,
+                            id: String)
+    -> Object2d {
+        for o in self.objects {
+            if o.get_id() == id {
+                return o;
+            }
+        }
+
+        return Object2d::NullObj();
+    }
 }
