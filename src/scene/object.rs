@@ -17,8 +17,11 @@ impl Object2d {
                 x: f64,
                 y: f64)
         -> Object2d {
-        return Object2d{
-            sprite: window().unwrap().document().unwrap().get_element_by_id(sprite_id).unwrap(),
+        return Object2d {
+            sprite: window().unwrap()
+                    .document().unwrap()
+                    .get_element_by_id(sprite_id).unwrap()
+                    .dyn_into::<web_sys::SvgImageElement>().unwrap(),
             id: id,
             x: x,
             y: y,
@@ -26,13 +29,14 @@ impl Object2d {
     }
 
     pub fn NullObj() -> Object2d {
-        return {
-            sprite: None,
+        return Object2d {
+            sprite: None::<SvgImageElement>.unwrap().
+                        dyn_into::<web_sys::SvgImageElement>().unwrap(),
             id: String::new(),
             x: 0.0,
             y: 0.0,
-        }
-    };
+        };
+    }
 
     pub fn render(&self,
                   ctx: CanvasRenderingContext2d)
