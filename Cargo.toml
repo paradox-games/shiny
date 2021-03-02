@@ -17,6 +17,7 @@ features = [
     "Event",
     "EventTarget",
     "HtmlCanvasElement",
+    "SvgImageElement",
     "HtmlElement",
     "HtmlInputElement",
     "Node",
